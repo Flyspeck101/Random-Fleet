@@ -45,6 +45,7 @@
     <h1 id="fleet">Fleet</h1>
     <script>
         let interval;
+        let blacklistedShips = [];
 
         function randomise() {
             clearInterval(interval);
@@ -52,7 +53,6 @@
                 let ships = ["Whale", "Electric Eels", "Magic Mirror", "Crustacean", "Catamaran", "Coracle", "Kayak", "Longboat", "Octopus", "Raft", "Sailboat", "Sea Monster", "Killer Squid", "Long Sub", "Mini Sub", "Sea Turtle", "See Slug", "Chaos Slug", "Chaos Sub", "Valkyrie", "Conniving Cannoneer", "Blunderbuster", "Mutineers", "Pirate Thief", "Cartographer", "Skull Cove", "Crafty Crab", "Galleon", "Slug Squad", "Chaotic Machinist"];
                 
                 let fleet = [];
-                let blacklistedShips = [];
 
                 blacklistedShips.forEach((e) => {
                     if (ships.includes(e)) ships.splice(ships.indexOf(e), 1);
