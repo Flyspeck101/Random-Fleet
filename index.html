@@ -49,12 +49,14 @@
         function randomise() {
             clearInterval(interval);
             interval = setInterval(() => {
-                let ships = ["Whale", "Electric Eels", "Magic Mirror", "Crustacean", "Catamaran", "Coracle", "Kayak", "Longboat", "Octopus", "Raft", "Sailboat", "Sea Monster", "Killer Squid", "Long Sub", "Mini Sub", "Sea Turtle", "See Slug", "Chaos Slug", "Chaos Sub", "Valkyrie", "Conniving Cannoneer", "Blunderbuster", "Mutineers", "Pirate Thief", "Cartographer", "Skull Cove"];
-                let bcShips = ["Crafty Crab", "Galleon", "Slug Squad", "Chaotic Machinist"];
-                if (document.getElementById("bc").checked) {
-                    ships = ships.concat(bcShips);
-                }
+                let ships = ["Whale", "Electric Eels", "Magic Mirror", "Crustacean", "Catamaran", "Coracle", "Kayak", "Longboat", "Octopus", "Raft", "Sailboat", "Sea Monster", "Killer Squid", "Long Sub", "Mini Sub", "Sea Turtle", "See Slug", "Chaos Slug", "Chaos Sub", "Valkyrie", "Conniving Cannoneer", "Blunderbuster", "Mutineers", "Pirate Thief", "Cartographer", "Skull Cove", "Crafty Crab", "Galleon", "Slug Squad", "Chaotic Machinist"];
+                
                 let fleet = [];
+                let blacklistedShips = [];
+
+                blacklistedShips.forEach((e) => {
+                    if (ships.includes(e)) ships.splice(ships.indexOf(e), 1);
+                });
 
                 function randomShip() {
                     const ship = ships[Math.floor(Math.random() * ships.length)];
